@@ -1,0 +1,38 @@
+.main-menu {
+  display: flex;
+}
+.menu {
+  width: 70%;
+  float: right;
+  font-size: 18px;
+}
+.menuUl {
+  line-height: 85px;
+  width: 60%;
+  float: right;
+}
+.menuLi {
+  display: inline-block;
+  list-style: none;
+  height: 46px;
+  margin-left: 15px;
+  margin-right: 15px;
+}
+.menuA {
+  text-decoration: none;
+  color: #444;
+  transition: 300ms all;
+}
+.brand {
+  display: block;
+  margin: 45px;
+  float: ight;
+  color: #444;
+  font-size: 20px;
+}
+
+@media screen and (max-width: 768px) {
+  .menu {
+    display: none;
+  }
+}
