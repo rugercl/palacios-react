@@ -1,4 +1,5 @@
 import logo from '../logo.svg';
+import CartWidget from './CartWidget';
 import "./NavBar.css";
 
 function NavBar(){
@@ -22,7 +23,9 @@ function NavBar(){
                         <a className={"menuA"} href="/">Infusiones</a>
                     </li>
                 </ul>
+                
             </nav>
+            <CartWidget/>
         </div>
     )
 }
