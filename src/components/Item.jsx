@@ -1,4 +1,4 @@
-
+import "./item.css";
 
 export default function Item(item) {
     // Item()
@@ -10,12 +10,12 @@ export default function Item(item) {
         
         <>
         
-        <div key={datos.id} className="card w-50 mt-5" >
+        <div key={datos.id} className="card" >
             <div className="card-header">
-                {datos.title}
+                <h3>{datos.title}</h3>
             </div><div className="card-body">
-                <img src={require('../../src/asset/img/acuario.jpg')} alt='' />
-                {datos.price}
+                <img className="te-imag" src={require(`../asset/img/${datos.pictureUrl}.jpg`).default} alt='' />
+                <p>$ {datos.price}</p>
             </div><div className="card-footer">
                 <button className="btn btn-outline-primary btn-block">
                 {datos.description}
@@ -26,4 +26,5 @@ export default function Item(item) {
     )
 
    }
+//    
    

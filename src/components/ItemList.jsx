@@ -1,6 +1,7 @@
 import Item from '../components/Item'
 import {useState, useEffect} from 'react'
 import {apiFetch} from '../services/apiFetch'
+import "./item.css"
 
 export default function ItemList() {
 
@@ -19,17 +20,15 @@ export default function ItemList() {
        
     },[])  
     return (
-        <>
-            <tr>       
-                <td>
+        <div className="container">
+
                     { loading ? <h1>Cargando...</h1> :         
                             product.map(prod=> 
                                 <Item datos={prod}/>
                     )
                     }
-                </td>
-            </tr>
-        </>
+
+        </div>
     )
         
    }

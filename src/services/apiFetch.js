@@ -6,7 +6,7 @@ const productos =
        "variedad":"negro",
        "description":"Te negro Antioxidante, energizante",
        "price":3500,
-       "pictureUrl":"./acuario.jpg"
+       "pictureUrl":"acuario"
     },
     {
        "id":2,
@@ -14,7 +14,7 @@ const productos =
        "variedad":"negro",
        "description":"Te negro Antioxidante, cafeina alta",
        "price":5500,
-       "pictureUrl":"../asset/img/anxi.jpg"
+       "pictureUrl":"anxi"
     },
     {
        "id":3,
@@ -22,7 +22,7 @@ const productos =
        "variedad":"hierba",
        "description":"Hierba antioxidante, cafeina baja",
        "price":7500,
-       "pictureUrl":"../asset/img/arabicaearl.jpg"
+       "pictureUrl":"arabicaearl"
     },
     {
        "id":4,
@@ -30,7 +30,7 @@ const productos =
        "variedad":"negro",
        "description":"Te negro Antioxidante, energizante",
        "price":6500,
-       "pictureUrl":"../asset/img/aries.jpg"
+       "pictureUrl":"aries"
     },
     {
        "id":5,
@@ -38,7 +38,7 @@ const productos =
        "variedad":"blanco",
        "description":"Te blanco energizante",
        "price":4500,
-       "pictureUrl":"../asset/img/baimudan.jpg"
+       "pictureUrl":"baimudan"
     },
     {
        "id":6,
@@ -46,7 +46,7 @@ const productos =
        "variedad":"hierba",
        "description":"Hierba antioxidante, relajante",
        "price":8500,
-       "pictureUrl":"../asset/img/bellaluna.jpg"
+       "pictureUrl":"bellaluna"
     },
     {
        "id":7,
@@ -54,7 +54,7 @@ const productos =
        "variedad":"hierba",
        "description":"Hierba antioxidante, digestion",
        "price":4500,
-       "pictureUrl":"../asset/img/berries.jpg"
+       "pictureUrl":"berries"
     },
     {
        "id":8,
@@ -62,7 +62,7 @@ const productos =
        "variedad":"hierba",
        "description":"Hierba relajante, sin cafeina",
        "price":7500,
-       "pictureUrl":"../asset/img/berrycream.jpg"
+       "pictureUrl":"berrycream"
     },
     {
        "id":9,
@@ -70,7 +70,7 @@ const productos =
        "variedad":"blanco",
        "description":"Te blanco antioxidante, digestion",
        "price":9500,
-       "pictureUrl":"../asset/img/blancoalba.jpg"
+       "pictureUrl":"blancoalba"
     },
     {
        "id":10,
@@ -78,7 +78,7 @@ const productos =
        "variedad":"blanco",
        "description":"Te blanco antioxidante, cafeina baja",
        "price":4500,
-       "pictureUrl":"../asset/img/blancoarandano.jpg"
+       "pictureUrl":"blancoarandano"
     }
  ]
 

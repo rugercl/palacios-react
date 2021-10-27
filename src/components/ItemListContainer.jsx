@@ -1,5 +1,6 @@
 import ItemCount from './ItemCount';
 import ItemList from '../components/ItemList'
+import "./item.css"
 
 function ItemListContainer(props) {
     
@@ -14,7 +15,7 @@ function ItemListContainer(props) {
             <div>
             <ItemCount stock={5} initial={1} onAdd={handleClick}/> 
             </div>
-            <div>
+            <div className="wrapper">
                 <ItemList/>
             </div>
         </div>
