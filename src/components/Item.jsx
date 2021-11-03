@@ -4,12 +4,10 @@ export default function Item(item) {
     // Item()
 
     const {datos}=item;
-    console.log(datos)
+    //console.log(datos)
     
     return(
-        
         <>
-        
         <div key={datos.id} className="card" >
             <div className="card-header">
                 <h3>{datos.title}</h3>
@@ -22,9 +20,7 @@ export default function Item(item) {
                 </button>
             </div>
         </div></>
-            
     )
-
    }
 //    
    

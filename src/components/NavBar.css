@@ -2,9 +2,11 @@
   display: flex;
 }
 .menu {
-  width: 70%;
+  width: 60%;
   float: right;
   font-size: 18px;
+  line-height: 85px;
+  color: #444;
 }
 .menuUl {
   line-height: 85px;
