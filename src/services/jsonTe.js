@@ -4,7 +4,7 @@ const productos =
       "id":1,
       "title":"Acuario",
       "variedad":"negro",
-      "infusion":"infusiones",
+      "categoria":"infusiones",
       "description":"Te negro Antioxidante, energizante",
       "price":3500,
       "pictureUrl":"acuario"
@@ -13,7 +13,7 @@ const productos =
       "id":2,
       "title":"Anxi Ruan Zhi",
       "variedad":"negro",
-      "infusion":"infusiones",
+      "categoria":"infusiones",
       "description":"Te negro Antioxidante, cafeina alta",
       "price":5500,
       "pictureUrl":"anxi"
@@ -22,7 +22,7 @@ const productos =
       "id":3,
       "title":"Arabica Earl",
       "variedad":"hierba",
-      "hierba":"hierbas",
+      "categoria":"hierbas",
       "description":"Hierba antioxidante, cafeina baja",
       "price":7500,
       "pictureUrl":"arabicaearl"
@@ -31,7 +31,7 @@ const productos =
       "id":4,
       "title":"Aries",
       "variedad":"negro",
-      "infusion":"infusiones",
+      "categoria":"infusiones",
       "description":"Te negro Antioxidante, energizante",
       "price":6500,
       "pictureUrl":"aries"
@@ -40,7 +40,7 @@ const productos =
       "id":5,
       "title":"Bai Mudan",
       "variedad":"blanco",
-      "infusion":"infusiones",
+      "categoria":"infusiones",
       "description":"Te blanco energizante",
       "price":4500,
       "pictureUrl":"baimudan"
@@ -49,7 +49,7 @@ const productos =
       "id":6,
       "title":"Bella Luna",
       "variedad":"hierba",
-      "hierba":"hierbas",
+      "categoria":"hierbas",
       "description":"Hierba antioxidante, relajante",
       "price":8500,
       "pictureUrl":"bellaluna"
@@ -58,7 +58,7 @@ const productos =
       "id":7,
       "title":"Berries blue",
       "variedad":"hierba",
-      "hierba":"hierbas",
+      "categoria":"hierbas",
       "description":"Hierba antioxidante, digestion",
       "price":4500,
       "pictureUrl":"berries"
@@ -67,7 +67,7 @@ const productos =
       "id":8,
       "title":"Berries Cream",
       "variedad":"hierba",
-      "hierba":"hierbas",
+      "categoria":"hierbas",
       "description":"Hierba relajante, sin cafeina",
       "price":7500,
       "pictureUrl":"berrycream"
@@ -76,7 +76,7 @@ const productos =
       "id":9,
       "title":"Blanco Albahaca",
       "variedad":"blanco",
-      "infusion":"infusiones",
+      "categoria":"infusiones",
       "description":"Te blanco antioxidante, digestion",
       "price":9500,
       "pictureUrl":"blancoalba"
@@ -85,7 +85,7 @@ const productos =
       "id":10,
       "title":"Blanco Arandano",
       "variedad":"blanco",
-      "infusion":"infusiones",
+      "categoria":"infusiones",
       "description":"Te blanco antioxidante, cafeina baja",
       "price":4500,
       "pictureUrl":"blancoarandano"
@@ -94,7 +94,7 @@ const productos =
       "id":11,
       "title":"Blanco Eterna",
       "variedad":"blanco",
-      "infusion":"infusiones",
+      "categoria":"infusiones",
       "description":"Te blanco antioxidante, cafeina baja",
       "price":3500,
       "pictureUrl":"blancoeterna"
@@ -103,7 +103,7 @@ const productos =
       "id":12,
       "title":"Blanco Frutilla",
       "variedad":"blanco",
-      "infusion":"infusiones",
+      "categoria":"infusiones",
       "description":"Te blanco antioxidante, digestion",
       "price":5500,
       "pictureUrl":"blancofrut"
@@ -112,7 +112,7 @@ const productos =
       "id":13,
       "title":"Blanco Naranja",
       "variedad":"blanco",
-      "infusion":"infusiones",
+      "categoria":"infusiones",
       "description":"Te blanco antioxidante, cafeina baja",
       "price":7500,
       "pictureUrl":"blanconara"
@@ -121,7 +121,7 @@ const productos =
       "id":14,
       "title":"Blue Berry Pancake",
       "variedad":"rojo",
-      "infusion":"infusiones",
+      "categoria":"infusiones",
       "description":"Te rooibos, relajante, sin cafeina",
       "price":6500,
       "pictureUrl":"blueberry"
@@ -130,7 +130,7 @@ const productos =
       "id":15,
       "title":"Blue Moon",
       "variedad":"blanco",
-      "infusion":"infusiones",
+      "categoria":"infusiones",
       "description":"Te Blanco, antioxidante, sin cafeina",
       "price":4500,
       "pictureUrl":"bluemoon"
@@ -139,7 +139,7 @@ const productos =
       "id":16,
       "title":"Buenas Noches",
       "variedad":"hierba",
-      "hierba":"hierbas",
+      "categoria":"hierbas",
       "description":"Hierba, relajante sin cafeina",
       "price":8500,
       "pictureUrl":"buenasnoches"
@@ -148,7 +148,7 @@ const productos =
       "id":17,
       "title":"Canela Negro",
       "variedad":"negro",
-      "infusion":"infusiones",
+      "categoria":"infusiones",
       "description":"Te negro, energizante",
       "price":4500,
       "pictureUrl":"canelanegro"
@@ -157,7 +157,7 @@ const productos =
       "id":18,
       "title":"Arabica Chai",
       "variedad":"hierba",
-      "hierba":"hierbas",
+      "categoria":"hierbas",
       "description":"Hierba, antioxidante, sin cafeina",
       "price":7500,
       "pictureUrl":"chai"
@@ -166,7 +166,7 @@ const productos =
       "id":19,
       "title":"Chocolate Chip",
       "variedad":"negro",
-      "infusion":"infusiones",
+      "categoria":"infusiones",
       "description":"Te negro, energizante",
       "price":9500,
       "pictureUrl":"chocchip"
@@ -175,7 +175,7 @@ const productos =
       "id":20,
       "title":"Chocolate truffle",
       "variedad":"negro",
-      "infusion":"infusiones",
+      "categoria":"infusiones",
       "description":"Te negro, energizante",
       "price":4500,
       "pictureUrl":"chocnegro"
@@ -184,7 +184,7 @@ const productos =
       "id":21,
       "title":"Deleite de Curcuma",
       "variedad":"hierba",
-      "hierba":"hierbas",
+      "categoria":"hierbas",
       "description":"Hierba, antioxidante, sin cafeina",
       "price":3500,
       "pictureUrl":"curcuma"
@@ -193,7 +193,7 @@ const productos =
       "id":22,
       "title":"Day Dreams",
       "variedad":"hierba",
-      "hierba":"hierbas",
+      "categoria":"hierbas",
       "description":"Hierba, antioxidante, sin cafeina",
       "price":5500,
       "pictureUrl":"daydream"
@@ -202,7 +202,7 @@ const productos =
       "id":23,
       "title":"Decaf Arandano",
       "variedad":"negro",
-      "infusion":"infusiones",
+      "categoria":"infusiones",
       "description":"Te negro, antioxidante, sin cafeina",
       "price":7500,
       "pictureUrl":"decafaran"
@@ -211,7 +211,7 @@ const productos =
       "id":24,
       "title":"Dragon Fruit",
       "variedad":"hierba",
-      "hierba":"hierbas",
+      "categoria":"hierbas",
       "description":"Hierba digestion, sin cafeina",
       "price":6500,
       "pictureUrl":"dragonfruit"
@@ -220,7 +220,7 @@ const productos =
       "id":25,
       "title":"Foxtrot",
       "variedad":"hierba",
-      "hierba":"hierbas",
+      "categoria":"hierbas",
       "description":"Hierba relajante, sin cafeina",
       "price":4500,
       "pictureUrl":"foxtrot"
@@ -229,7 +229,7 @@ const productos =
       "id":26,
       "title":"Assam Melody",
       "variedad":"negro",
-      "infusion":"infusiones",
+      "categoria":"infusiones",
       "description":"Te negro, energizante, cafeina alta",
       "price":8500,
       "pictureUrl":"melody"
@@ -238,7 +238,7 @@ const productos =
       "id":27,
       "title":"Arabica Mocha",
       "variedad":"hierba",
-      "hierba":"hierbas",
+      "categoria":"hierbas",
       "description":"Hierba, antioxidante, cafeina baja",
       "price":4500,
       "pictureUrl":"mocha"
@@ -247,7 +247,7 @@ const productos =
       "id":28,
       "title":"Pu erh Chip",
       "variedad":"rojo",
-      "infusion":"infusiones",
+      "categoria":"infusiones",
       "description":"Te rojo digestion, cafeina alta",
       "price":7500,
       "pictureUrl":"puerhchip"
@@ -256,7 +256,7 @@ const productos =
       "id":29,
       "title":"Bag Earl Bravo",
       "variedad":"blanco",
-      "infusion":"infusiones",
+      "categoria":"infusiones",
       "description":"Te blanco, antioxidante, cafeina alta",
       "price":9500,
       "pictureUrl":"teabagsearl"
@@ -265,7 +265,7 @@ const productos =
       "id":30,
       "title":"Lemon Turmeric",
       "variedad":"hierba",
-      "hierba":"hierbas",
+      "categoria":"hierbas",
       "description":"Hierba Antioxidante,cafeina baja",
       "price":4500,
       "pictureUrl":"turmeric"
@@ -274,7 +274,7 @@ const productos =
       "id":31,
       "title":"Verde Frambuesa",
       "variedad":"verde",
-      "infusion":"infusiones",
+      "categoria":"infusiones",
       "description":"Te verde antioxidante, cafeina baja",
       "price":3500,
       "pictureUrl":"verdeframb"
@@ -283,7 +283,7 @@ const productos =
       "id":32,
       "title":"Natural Roiboos",
       "variedad":"rojo",
-      "infusion":"infusiones",
+      "categoria":"infusiones",
       "description":"Té Rojo Roiboos, cafeina baja",
       "price":6500,
       "pictureUrl":"Roiboos"
@@ -292,7 +292,7 @@ const productos =
       "id":33,
       "title":"Yunnah Canela",
       "variedad":"rojo",
-      "infusion":"infusiones",
+      "categoria":"infusiones",
       "description":"Té Rojo romance, cafeina baja",
       "price":4500,
       "pictureUrl":"romance"
@@ -301,7 +301,7 @@ const productos =
       "id":34,
       "title":"China Feng",
       "variedad":"rojo",
-      "infusion":"infusiones",
+      "categoria":"infusiones",
       "description":"Té Rojo chino, cafeina baja",
       "price":7500,
       "pictureUrl":"guangxing"
@@ -310,7 +310,7 @@ const productos =
       "id":35,
       "title":"Marroqui Heath",
       "variedad":"verde",
-      "infusion":"infusiones",
+      "categoria":"infusiones",
       "description":"Té verde y menta Marroqui, cafeina alta",
       "price":6500,
       "pictureUrl":"heather"
@@ -319,7 +319,7 @@ const productos =
       "id":36,
       "title":"Green Tea",
       "variedad":"verde",
-      "infusion":"infusiones",
+      "categoria":"infusiones",
       "description":"Té verde Higher Living, cafeina baja",
       "price":4500,
       "pictureUrl":"living"
@@ -328,7 +328,7 @@ const productos =
       "id":37,
       "title":"Grass Ginger",
       "variedad":"verde",
-      "infusion":"infusiones",
+      "categoria":"infusiones",
       "description":"Té verde grass ginger Pukka, cafeina baja",
       "price":3500,
       "pictureUrl":"ginger"

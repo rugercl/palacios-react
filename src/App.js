@@ -2,9 +2,10 @@ import {BrowserRouter, Switch, Route} from 'react-router-dom'
 import './App.css';
 import NavBar from './components/NavBar';
 import ItemListContainer from './components/ItemListContainer.jsx'
-import { ItemDetailContainer } from './components/ItemDetailContainer';
+import ItemDetailContainer from './components/ItemDetailContainer';
 import  Cart  from './components/Cart/Cart';
 import CartContextProvider from './components/CartContext';
+
 
 const App = () => {
   const objStyle = {backgroundColor: 'Gray'};

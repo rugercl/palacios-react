@@ -5,7 +5,6 @@ import {useCartContext} from './CartContext'
 
 const ItemDetail = ({producto}) => {
     const [count, setCount] = useState(0)
-
     
     const {cartList, mostrarListado, agregarAlCarrito} = useCartContext()
     
@@ -22,7 +21,7 @@ const ItemDetail = ({producto}) => {
     return(
         
         <>
-         <div key={producto.id} className="card" >
+          <div className="card" >
             <div className="card-header">
                 <h3>{producto.title}</h3>
             </div><div className="card-body">

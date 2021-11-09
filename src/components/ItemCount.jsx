@@ -22,7 +22,7 @@ const ItemCount = ({stock, initial, onAdd}) => {
     }
 
     return (
-        <div className="w-50">
+    <div className="w-50">
         <button className="btn btn-primary" onClick={handlerAdd}>+</button>
         <label>{count}</label>
         <button className="btn btn-primary" onClick={handlerRm}>-</button><br />

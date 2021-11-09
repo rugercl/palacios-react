@@ -5,7 +5,7 @@ const Item = ({prod}) => {
     
     return(
         <>
-        <div key={prod.id} className="card" >
+        <div className="card" >
             <div className="card-header">
                 <h3>{prod.title}</h3>
             </div><div className="card-body">
@@ -14,7 +14,7 @@ const Item = ({prod}) => {
             </div><div className="card-footer">
             <Link to={`/detalle/${prod.id}`}>
                 <button className="btn btn-outline-primary btn-block">
-                {prod.description}
+                    {prod.description}
                 </button>
             </Link>
             </div>

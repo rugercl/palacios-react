@@ -2,7 +2,7 @@ import {useState, useEffect} from 'react'
 import {apiFetchUnProducto} from '../services/apiFetch'
 import ItemDetail from '../components/ItemDetail'
 
-export  const ItemDetailContainer = () => {
+const ItemDetailContainer = () => {
     const [prod, setProd] = useState({})
     const [loading, setLoading] = useState(true)
 
@@ -25,3 +25,5 @@ export  const ItemDetailContainer = () => {
         </div>
     )
 }
+
+export default ItemDetailContainer
