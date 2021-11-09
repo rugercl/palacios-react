@@ -1,25 +1,39 @@
-// import React from 'react'
 import "./item.css";
+import ItemCount from "./ItemCount";
+import {useState} from 'react'
+import {useCartContext} from './CartContext'
 
-function ItemDetail (item) {
-    const {datos}=item;
-    console.log(datos)
+const ItemDetail = ({producto}) => {
+    const [count, setCount] = useState(0)
+
+    
+    const {cartList, mostrarListado, agregarAlCarrito} = useCartContext()
+    
+    console.log(cartList);
+    console.log(mostrarListado);
+
+    const onAdd =(cant)=>{
+        console.log(cant)
+        setCount(cant)
+        agregarAlCarrito({producto, cantidad: cant})
+        
+    }
     
     return(
         
         <>
-        
-        <div key={datos.id} className="card" >
+         <div key={producto.id} className="card" >
             <div className="card-header">
-                <h3>{datos.title}</h3>
+                <h3>{producto.title}</h3>
             </div><div className="card-body">
-                <img className="te-imag" src={require(`../asset/img/${datos.pictureUrl}.jpg`).default} alt='' />
-                <p>$ {datos.price}</p>
+                <img className="te-imag" src={require(`../asset/img/${producto.pictureUrl}.jpg`).default} alt='' />
+                <p>$ {producto.price}</p>
             </div><div className="card-footer">
                 <button className="btn btn-outline-primary btn-block">
-                {datos.description}
+                {producto.description}
                 </button>
             </div>
+            <ItemCount initial={1} stock={5} onAdd={onAdd} />
         </div></>
             
     )
@@ -27,4 +41,4 @@ function ItemDetail (item) {
    }
 
 
-export default ItemDetail
+   export default ItemDetail

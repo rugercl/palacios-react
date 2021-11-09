@@ -1,36 +1,45 @@
 import React , {useState} from 'react';
+import { Link } from 'react-router-dom'
 
-export default function ItemCount({stock, initial, onAdd}) {
+const ItemCount = ({stock, initial, onAdd}) => {
 
     //Hooks
     const [count, setCount] = useState(initial);
-    
-    //Metodos
-    const sumar = () => {
-        if(count < stock){
-            setCount(count + 1)
-        }};
-    const restar = () => {
-        if(count > initial){
-            setCount(count - 1)
-        }
-        };
+    const [cambiarBoton, setCambiarBoton] = useState(false)
 
-    //Render
+    const handlerAdd =()=>{
+        setCount(count +1)        
+    }
+
+    const handlerRm =()=>{
+        if(count > initial) setCount(count - 1)
+    }   
+
+    const handlerOnAdd=()=>{
+        onAdd(count)
+        setCount(initial)
+        setCambiarBoton(true)
+    }
+
     return (
-        
-        <div classNameName="item-count">
+        <div className="w-50">
+        <button className="btn btn-primary" onClick={handlerAdd}>+</button>
+        <label>{count}</label>
+        <button className="btn btn-primary" onClick={handlerRm}>-</button><br />
 
-            <form>
-                    <span className="input-group-btn">
-                        <button className="btn btn-default"  onClick={restar} type="button" disabled={count<1}>-</button>                    
-                    </span>
-                    <input  type="text"  className="form-control" value={count} align="center" disabled={true}/>
-                    <span className="input-group-btn">
-                        <button className="btn btn-default"  onClick={sumar} type="button" disabled={count<1}>+</button>
-                    </span>
-                    <input type="submit" onClick={()=> onAdd(count)} value="Agregar Al Carrito" />
-            </form>
-        </div>
+
+        { cambiarBoton ?
+            <Link to='/cart'>
+                <button className="btn btn-outline-primary btn-block"  >Terminar Compra</button> 
+            </Link>
+
+          :  
+            <button className="btn btn-outline-primary btn-block" onClick={handlerOnAdd}>Agregar</button> 
+        }
+           
+    
+    </div> 
     );
   }
+
+  export default ItemCount;

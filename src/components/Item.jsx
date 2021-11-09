@@ -1,26 +1,27 @@
 import "./item.css";
+import {Link} from 'react-router-dom'
 
-export default function Item(item) {
-    // Item()
-
-    const {datos}=item;
-    //console.log(datos)
+const Item = ({prod}) => {
     
     return(
         <>
-        <div key={datos.id} className="card" >
+        <div key={prod.id} className="card" >
             <div className="card-header">
-                <h3>{datos.title}</h3>
+                <h3>{prod.title}</h3>
             </div><div className="card-body">
-                <img className="te-imag" src={require(`../asset/img/${datos.pictureUrl}.jpg`).default} alt='' />
-                <p>$ {datos.price}</p>
+                <img className="te-imag" src={require(`../asset/img/${prod.pictureUrl}.jpg`).default} alt='' />
+                <p>$ {prod.price}</p>
             </div><div className="card-footer">
+            <Link to={`/detalle/${prod.id}`}>
                 <button className="btn btn-outline-primary btn-block">
-                {datos.description}
+                {prod.description}
                 </button>
+            </Link>
             </div>
         </div></>
     )
    }
+
+   export default Item;
 //    
    
