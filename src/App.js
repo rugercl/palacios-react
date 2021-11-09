@@ -19,7 +19,7 @@ const App = () => {
               <ItemListContainer greeting="Datos de mi proximo Sitio WEB"/>
               </Route>
               <Route path='/categoria/:id' exact component={ItemListContainer} />                    
-              <Route exact path='/detalle/:id' component={ItemDetailContainer} /> 
+              <Route exact path='/item/:id' component={ItemDetailContainer} /> 
               <Route exact path='/cart' component={Cart} />             
             </Switch>
           </BrowserRouter>

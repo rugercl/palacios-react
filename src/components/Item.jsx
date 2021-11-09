@@ -12,7 +12,7 @@ const Item = ({prod}) => {
                 <img className="te-imag" src={require(`../asset/img/${prod.pictureUrl}.jpg`).default} alt='' />
                 <p>$ {prod.price}</p>
             </div><div className="card-footer">
-            <Link to={`/detalle/${prod.id}`}>
+            <Link to={`/item/${prod.id}`}>
                 <button className="btn btn-outline-primary btn-block">
                     {prod.description}
                 </button>
