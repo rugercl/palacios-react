@@ -7,13 +7,15 @@ const ItemDetailContainer = () => {
     const [loading, setLoading] = useState(true)
 
     useEffect(() => {
-        apiFetchUnProducto
+        apiFetchUnProducto        
         .then( res => { 
             setProd(res)
+            console.log(res)
         })    
         .catch(err => console.log(err))
         .finally(()=> setLoading(false))       
-    },[])
+    }, [prod])
+    console.log(prod)
 
     return (
         <div className="container">

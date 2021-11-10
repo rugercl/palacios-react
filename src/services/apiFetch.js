@@ -1,7 +1,7 @@
 import productos from './jsonTe'
 
 const producto ={
-   "id":1,
+   "id":2,
    "title":"Acuario",
    "variedad":"negro",
    "description":"Te negro Antioxidante, energizante",
@@ -10,6 +10,8 @@ const producto ={
 }
 
 export const apiFetchUnProducto = new Promise((resolve, reject)=>{
+    //console.log(apiFetchUnProducto)
+    //const producto =productos.find(prod => prod.id == id)
    setTimeout(()=>{
        resolve(producto)
    }, 2000)

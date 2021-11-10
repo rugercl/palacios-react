@@ -12,7 +12,7 @@ const ItemListContainer = () => {
     const { id } = useParams()
 
     useEffect(() => {
-        console.log('[ID]: ', id);
+        //console.log('[ID]: ', id);
         if (id) {
             apiFetch
             .then( res => {        
@@ -34,7 +34,7 @@ const ItemListContainer = () => {
         }
     },[id]) 
       
-    console.log(id);
+    //console.log(id);
 
     return (
         <> 
