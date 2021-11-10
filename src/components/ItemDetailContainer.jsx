@@ -1,13 +1,15 @@
 import {useState, useEffect} from 'react'
 import {apiFetchUnProducto} from '../services/apiFetch'
 import ItemDetail from '../components/ItemDetail'
+import {useParams} from 'react-router-dom'
 
 const ItemDetailContainer = () => {
     const [prod, setProd] = useState({})
     const [loading, setLoading] = useState(true)
+    const  {id} = useParams();
 
     useEffect(() => {
-        apiFetchUnProducto        
+        apiFetchUnProducto(id)       
         .then( res => { 
             setProd(res)
             console.log(res)
@@ -15,7 +17,8 @@ const ItemDetailContainer = () => {
         .catch(err => console.log(err))
         .finally(()=> setLoading(false))       
     }, [prod])
-    console.log(prod)
+    //console.log('[params]',useParams());
+    //console.log('[params]',this.prod.match.params.id)
 
     return (
         <div className="container">

@@ -8,6 +8,7 @@ const ItemDetail = ({producto}) => {
     
     const {cartList, mostrarListado, agregarAlCarrito} = useCartContext()
     
+    
     console.log(cartList);
     console.log(mostrarListado);
 
@@ -27,11 +28,7 @@ const ItemDetail = ({producto}) => {
             </div><div className="card-body">
                 <img className="te-imag" src={require(`../asset/img/${producto.pictureUrl}.jpg`).default} alt='' />
                 <p>$ {producto.price}</p>
-            </div><div className="card-footer">
-                <button className="btn btn-outline-primary btn-block">
-                {producto.description}
-                </button>
-            </div>
+            </div>            
             <ItemCount initial={1} stock={5} onAdd={onAdd} />
         </div></>
             
