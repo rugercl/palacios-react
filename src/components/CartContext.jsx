@@ -9,6 +9,7 @@ export const useCartContext = ()=> useContext(CartContext)
 const CartContextProvider = ({children}) => {
     const [cartList, setCartList] = useState([])
 
+    //Funcion que agrega un producto al carrito
     function agregarAlCarrito(items) { // [...cartList,items]        
         let datos = {
             id: items.producto.id, 
@@ -30,12 +31,27 @@ const CartContextProvider = ({children}) => {
             setCartList([...cartList,datos])
         }
 
-        console.log(cartList)
-        // setCartList([
-        //     ...cartList,
-        //     product
-        // ])
     }
+
+    // funcion que agrega cierta cantidad de productos al carrito
+    function addItem (item, cantidad) {
+        agregarAlCarrito({
+            producto: item,
+            cantidad: cantidad
+        })
+    }
+
+    // funcion que elimina un producto del carrito
+    function removeItem (id) {
+        const productos = cartList.filter(product=> product.id!==id)
+        setCartList(productos)
+    }
+
+    // funcion que elimina todos los productos del carrito
+    function clear () {
+        setCartList([])
+    }
+
     
     const mostrarListado =()=>{
         console.log(cartList)
@@ -46,7 +62,10 @@ const CartContextProvider = ({children}) => {
         <CartContext.Provider value={{
             cartList,
             mostrarListado,
-            agregarAlCarrito
+            agregarAlCarrito,
+            addItem,
+            removeItem,
+            clear
         }}>
             {children}
         </CartContext.Provider>

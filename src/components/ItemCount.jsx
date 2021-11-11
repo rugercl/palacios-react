@@ -23,9 +23,9 @@ const ItemCount = ({stock, initial, onAdd}) => {
 
     return (
     <div className="w-50">
-        <button className="btn btn-primary" onClick={handlerAdd}>+</button>
+        {/* <button className="btn btn-primary" onClick={handlerAdd}>+</button>
         <label>{count}</label>
-        <button className="btn btn-primary" onClick={handlerRm}>-</button><br />
+        <button className="btn btn-primary" onClick={handlerRm}>-</button><br /> */}
 
 
         { cambiarBoton ?
@@ -33,8 +33,10 @@ const ItemCount = ({stock, initial, onAdd}) => {
                 <button className="btn btn-outline-primary btn-block"  >Terminar Compra</button> 
             </Link>
 
-          :  
-            <button className="btn btn-outline-primary btn-block" onClick={handlerOnAdd}>Agregar</button> 
+          : 
+           
+          <><button className="btn btn-primary" onClick={handlerAdd}>+</button><label>{count}</label><button className="btn btn-primary" onClick={handlerRm}>-</button><br /><button className="btn btn-outline-primary btn-block" onClick={handlerOnAdd}>Agregar</button></>
+             
         }
            
     
