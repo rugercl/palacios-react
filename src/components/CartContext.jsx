@@ -52,6 +52,17 @@ const CartContextProvider = ({children}) => {
         setCartList([])
     }
 
+    //funcion que retorna verdadero o falso si el id se encuentra en el carrito
+    function isInCart(id){
+        if(cartList.some(product=> product.id===id)){
+            return true
+        }else{
+            return false
+        }
+    }
+
+    //const prod = this.productos.find(prod => prod.id == id)
+
     
     const mostrarListado =()=>{
         console.log(cartList)
@@ -65,7 +76,8 @@ const CartContextProvider = ({children}) => {
             agregarAlCarrito,
             addItem,
             removeItem,
-            clear
+            clear,
+            isInCart
         }}>
             {children}
         </CartContext.Provider>
