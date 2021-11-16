@@ -5,23 +5,27 @@ const CartContext = createContext()
 
 export const useCartContext = ()=> useContext(CartContext) 
 
-
 const CartContextProvider = ({children}) => {
     const [cartList, setCartList] = useState([])
+    const [show, setShow] = useState(true);
+    const countItems = () => cartList.length;
 
     //Funcion que agrega un producto al carrito
-    function agregarAlCarrito(items) { // [...cartList,items]        
-        let datos = {
-            id: items.producto.id, 
+    function agregarAlCarrito(items) { // [...cartList,items]    
+        console.log(items.producto.pictureUrl)    
+        let datos = 
+        {
+            id: items.producto.id,
+            picture: items.producto.pictureUrl, 
             title: items.producto.title, 
             price: items.producto.price, 
-            cantidad: items.cantidad
+            amount: items.cantidad
         }
         const existe = cartList.some( produc=> produc.id===datos.id);
         if(existe){
             const product = cartList.map(product=>{
                 if(product.id===datos.id){
-                    product.cantidad ++;
+                    product.amount ++;
                     return product;
                 }
                 
@@ -29,6 +33,7 @@ const CartContextProvider = ({children}) => {
             return product
         }else{
             setCartList([...cartList,datos])
+            console.log(cartList)
         }
 
     }
@@ -37,15 +42,22 @@ const CartContextProvider = ({children}) => {
     function addItem (item, cantidad) {
         agregarAlCarrito({
             producto: item,
-            cantidad: cantidad
+            amount: cantidad
         })
     }
 
     // funcion que elimina un producto del carrito
-    function removeItem (id) {
-        const productos = cartList.filter(product=> product.id!==id)
-        setCartList(productos)
-    }
+    const removeItem = (id) =>{
+        console.log(id)
+        const producto =  cartList.filter(producto=> producto.id !== id);
+        setCartList({
+            ...cartList, producto,
+            countCarrito : cartList.amount - 1,
+        })
+        if(cartList.cantidad === 1){
+            setShow(false)
+        }
+     }
 
     // funcion que elimina todos los productos del carrito
     function clear () {
@@ -60,14 +72,10 @@ const CartContextProvider = ({children}) => {
             return false
         }
     }
-
-    //const prod = this.productos.find(prod => prod.id == id)
-
     
     const mostrarListado =()=>{
         console.log(cartList)
     }
-
 
     return (
         <CartContext.Provider value={{
@@ -77,7 +85,9 @@ const CartContextProvider = ({children}) => {
             addItem,
             removeItem,
             clear,
-            isInCart
+            isInCart, 
+            show,
+            countItems
         }}>
             {children}
         </CartContext.Provider>
