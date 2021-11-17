@@ -25,7 +25,7 @@ const ItemCount = ({stock, initial, onAdd}) => {
     <div className="w-50">
         { cambiarBoton ?
             <Link to='/cart'>
-                <button className="btn btn-outline-primary btn-block"  >Terminar Compra</button> 
+                <button className="btn btn-outline-primary btn-block"  >Terminar Compra</button>
             </Link>
 
           : 

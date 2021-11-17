@@ -45,6 +45,19 @@
   padding: 20px;
 }
 
+.pCartWidget {
+  color: white;
+  font-size: 20px;
+  width: 25px;
+  height: 25px;
+  background-color: tomato;
+  border-radius: 50%;
+  font-weight: 700;
+  position: absolute;
+  top: 25px;
+  right: 5px;
+}
+
 @media screen and (max-width: 768px) {
   .menu {
     display: none;

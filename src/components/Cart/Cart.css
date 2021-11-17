@@ -3,3 +3,35 @@
   text-align: center;
   color: #666;
 }
+.cartNoItems {
+  font-size: 1.5rem;
+  text-align: center;
+  color: #666;
+}
+.btnBack {
+  font-size: 1rem;
+  text-align: center;
+  color: #666;
+}
+
+.table {
+  width: 80%;
+  margin: 0 auto;
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+.table td,
+th {
+  border: 1px solid #ddd;
+  padding: 8px;
+  color: #666;
+}
+
+.table th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #7be6e6;
+  color: #666;
+}
