@@ -58,6 +58,14 @@
   padding: 10px 20px;
   color: #007bff;
 }
+
+.btn-outline-secondary {
+  background-color: transparent;
+  border: 2px solid #00ff95;
+  padding: 10px 20px;
+  color: #00ff95;
+}
+
 .btn-block {
   width: 100%;
 }
