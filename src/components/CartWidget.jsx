@@ -1,18 +1,25 @@
 import shopping from '../asset/img/shopping.png'
 import {useCartContext} from '../components/CartContext'
-import React, {useState} from 'react'
 import "./NavBar.css";
 
 function CartWidget (){
-    const {countItems, itemsInCart } = useCartContext()
-    const esconder = countItems() === 0 ? 'esconder' : ''
+    const {countItems, itemsInCart, show } = useCartContext()
     
-    console.log(countItems)
-
     return(
+        
         <div>
+            {show ?
+            <>
             <img src={shopping} className="shopping" alt="carrito" />
             {itemsInCart() ? (<></>) :<div className="pCartWidget"><span>{countItems()}</span></div>}
+                    
+            </>
+            : 
+            <>
+            
+            </>
+        }
+    
         </div>
     )
 }

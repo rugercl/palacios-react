@@ -5,8 +5,11 @@ const CartContext = createContext()
 
 export const useCartContext = ()=> useContext(CartContext) 
 
+
 const CartContextProvider = ({children}) => {
     const [cartList, setCartList] = useState([])
+    const [show, setShow] = useState(false);
+    
 
     //Funcion que agrega un producto al carrito
     function agregarAlCarrito(items) { // [...cartList,items]    
@@ -48,11 +51,13 @@ const CartContextProvider = ({children}) => {
 
     // funcion que elimina todos los productos del carrito
     const clearCarrito = () => {
-        setCartList([]);
+        setCartList([])
+        
     }
 
     //Funcion que indica la cantidad de elementos que hay en el carrito
     const countItems = () => {
+        setShow(true)
         return cartList.reduce((acum, prod) => acum + (prod.amount), 0) 
                
     }  
@@ -92,7 +97,8 @@ const CartContextProvider = ({children}) => {
             isInCart, 
             countItems,
             precioTotal,
-            itemsInCart
+            itemsInCart,
+            show
         }}>
             {children}
         </CartContext.Provider>

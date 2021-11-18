@@ -30,7 +30,8 @@ const ItemCount = ({stock, initial, onAdd}) => {
                 </Link>
                 <Link to='/'>
                     <button className="btn btn-outline-secondary btn-block">Continuar Comprando</button>
-                </Link></>
+                </Link>
+            </>
 
           : 
            
