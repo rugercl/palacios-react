@@ -14,10 +14,24 @@ const ItemListContainer = () => {
     console.log(id)
 
     useEffect(() => {
-        const db = getFirestore()
-        const dbQuery= db.collection('items').get()      
-        dbQuery
-        .then(resp => setProduct( resp.docs.map( prod => ( { id: prod.id, ...prod.data() } )) ))
+        if(id){
+            console.log(["pasando"],id)
+            const db = getFirestore()
+            const dbQuery= db.collection('items').get()
+         
+            dbQuery
+            .then(resp => ( resp.docs.map( prod => ( { id: prod.id, ...prod.data() } )) ))
+            setProduct(product.filter(prod => prod.categoria == id))
+            console.log(["dentroID"],product)
+            // product.filter(prod => prod.id == id)
+            // console.log(["despuesID"],product)
+
+        }else{
+            const db = getFirestore()
+            const dbQuery= db.collection('items').orderBy('title', 'asc').get()     
+            dbQuery
+            .then(resp => setProduct( resp.docs.map( prod => ( { id: prod.id, ...prod.data() } )) ))
+        }
 
     //     if(id){
     //         const dbQuery= db.collection('items').get()
