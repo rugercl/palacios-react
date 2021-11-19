@@ -38,7 +38,8 @@ const Cart = () => {
                 <tr>
                     
                     {/* {(`../../asset/img/{prod.picture}.jpg`).default} */}
-                    <td><img width="50" src={require(`../../asset/img/${prod.picture}.jpg`).default} alt=""/></td>
+                    {/* <td><img width="50" src={require(`../../asset/img/${prod.picture}.jpg`).default} alt=""/></td> */}
+                    <td><img width="50" src={prod.picture} alt=""/></td>
                     <td>{prod.title}</td>
                     <td>{prod.amount}</td>
                     <td>${prod.price}</td>

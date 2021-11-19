@@ -8,7 +8,7 @@ export const useCartContext = ()=> useContext(CartContext)
 
 const CartContextProvider = ({children}) => {
     const [cartList, setCartList] = useState([])
-    const [show, setShow] = useState(false);
+    const [show, setShow] = useState(true);
     
 
     //Funcion que agrega un producto al carrito
@@ -30,7 +30,7 @@ const CartContextProvider = ({children}) => {
                     return product;
                 }
                 
-            })
+            });
             return product
         }else{
             setCartList([...cartList,datos])

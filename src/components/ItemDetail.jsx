@@ -26,7 +26,8 @@ const ItemDetail = ({producto}) => {
             <div className="card-header">
                 <h3>{producto.title}</h3>
             </div><div className="card-body">
-                <img className="te-imag" src={require(`../asset/img/${producto.pictureUrl}.jpg`).default} alt='' />
+                {/* <img className="te-imag" src={require(`../asset/img/${producto.pictureUrl}.jpg`).default} alt='' /> */}
+                <img className="te-imag" src={producto.pictureUrl} alt='' />
                 <p>$ {producto.price}</p>
             </div>            
             <ItemCount initial={1} stock={5} onAdd={onAdd} />

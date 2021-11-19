@@ -15,7 +15,7 @@ function NavBar(){
             <Link className={"menu"} to='/'>Inicio</Link>
             <Link className={"menu"} to='/categoria/hierbas'>Infusiones Hierbas</Link>       
             <Link className={"menu"} to='/categoria/infusiones'>Infusiones Té</Link>       
-            <Link className={"menu"} to='/cart'>Carrito</Link> 
+            {/* <Link className={"menu"} to='/cart'>Carrito</Link>  */}
             {/* <nav className={"menu"}> */}
             
                 {/* <ul className={"menuUl"}>

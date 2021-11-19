@@ -1,5 +1,6 @@
 import {useState, useEffect} from 'react'
-import {apiFetchUnProducto} from '../services/apiFetch'
+// import {apiFetchUnProducto} from '../services/apiFetch'
+import {getFirestore} from '../../src/services/firebase/firebase'
 import ItemDetail from '../components/ItemDetail'
 import {useParams} from 'react-router-dom'
 
@@ -9,23 +10,31 @@ const ItemDetailContainer = () => {
     const  {id} = useParams();
 
     useEffect(() => {
-        apiFetchUnProducto(id)       
-        .then( res => { 
-            setProd(res)
-            console.log(res)
-        })    
-        .catch(err => console.log(err))
-        .finally(()=> setLoading(false))       
-    }, [prod])
-    //console.log('[params]',useParams());
-    //console.log('[params]',this.prod.match.params.id)
+        const db= getFirestore()
+        db.collection('items').doc(id).get()
+        .then(resp => setProd({id: resp.id, ...resp.data()})) 
+        if(id){
+            db.collection('items').doc(id).get()
+            .then(resp => setProd({id: resp.id, ...resp.data()})) 
+
+        }
+
+        // apiFetchUnProducto(id)       
+        // .then( res => { 
+        //     setProd(res)
+        //     console.log(res)
+        // })    
+        // .catch(err => console.log(err))
+        // .finally(()=> setLoading(false))       
+    }, [id])
 
     return (
         <div className="container">
+            <ItemDetail producto={prod}/> 
 
-                    { loading ? <h1>Cargando...</h1> : 
+                    {/* { loading ? <h1>Cargando...</h1> : 
                                 <ItemDetail producto={prod}/>                    
-                    }
+                    } */}
 
         </div>
     )
