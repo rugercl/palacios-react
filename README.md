@@ -40,6 +40,13 @@ El paquete react-dom proporciona métodos específicos del DOM que pueden ser ut
 Realizar navegación en la aplicación, es tan sencillo como entender la documentación de React Router DOM. La navegación consiste en definir rutas, para que un componente sea visualizado al dirigirse a la ruta en el navegador.
 Gracias a librería, podemos crear rutas fijas, por ejemplo, para mostrar formularios, listas o tablas de datos, entre otros.
 
+### `npm i -g firebase`
+
+La base de datos noSql de Google, Firebase te ayuda a compilar y ejecutar apps exitosas. Con el respaldo de Google y el aprecio de equipos de desarrollo de apps, desde startups hasta empresas mundiales.
+En su sitio WEB promociona una variada cantidad de productos y soluciones para
+complementar su el uso de su base.
+Ma informacion en el siguiente link: [https://firebase.google.com/]
+
 ### `react-scripts start`
 
 react-scripts es un conjunto de scripts del create-react-app starter pack. Este le ayuda a iniciar proyectos sin configurar, por lo que no tiene que configurar su proyecto por sí mismo, configura el entorno de desarrollo e inicia un servidor, así como la recarga de módulos en caliente(similar a nodemon)

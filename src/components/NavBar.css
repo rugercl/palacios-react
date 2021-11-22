@@ -1,11 +1,12 @@
 .main-menu {
   display: flex;
+  background-color: gray;
 }
 .menu {
   width: 60%;
   float: right;
   font-size: 18px;
-  line-height: 85px;
+  line-height: 150px;
   color: #444;
 }
 .menuUl {

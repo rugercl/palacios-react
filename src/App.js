@@ -5,18 +5,20 @@ import ItemListContainer from './components/ItemListContainer.jsx'
 import ItemDetailContainer from './components/ItemDetailContainer';
 import  Cart  from './components/Cart/Cart';
 import CartContextProvider from './components/CartContext';
+import HomeContainer from './components/HomeContainer';
 
 
 const App = () => {
-  const objStyle = {backgroundColor: 'Gray'};
+  //const objStyle = {backgroundColor: 'Gray'};
   return (
-    <div className="App" style={objStyle}>   
+    // <div className="App" style={objStyle}> 
+    <div className="App">  
     <CartContextProvider>  
           <BrowserRouter>
             <NavBar/>
             <Switch>
               <Route exact path='/'>
-              <ItemListContainer greeting="Datos de mi proximo Sitio WEB"/>
+              <HomeContainer greeting="Cuanto té Quiero"/>
               </Route>
               <Route path='/categoria/:id' exact component={ItemListContainer} />                    
               <Route exact path='/item/:id' component={ItemDetailContainer} /> 

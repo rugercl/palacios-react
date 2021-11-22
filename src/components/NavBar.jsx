@@ -1,4 +1,4 @@
-import logo from '../logo.svg';
+import logo from '../logo.png';
 import CartWidget from './CartWidget';
 import { Link } from 'react-router-dom'
 import "./NavBar.css";
@@ -13,29 +13,11 @@ function NavBar(){
             </span>
             
             <Link className={"menu"} to='/'>Inicio</Link>
-            <Link className={"menu"} to='/categoria/todos'>Todos Los Productos</Link>
+            <Link className={"menu"} to='/categoria/todos'>Productos</Link>
             <Link className={"menu"} to='/categoria/hierbas'>Infusiones Hierbas</Link>       
             <Link className={"menu"} to='/categoria/infusiones'>Infusiones Té</Link>
             <Link className={"menu"} to='/categoria/accesorios'>Accesorios para Té</Link>        
-            {/* <Link className={"menu"} to='/cart'>Carrito</Link>  */}
-            {/* <nav className={"menu"}> */}
-            
-                {/* <ul className={"menuUl"}>
-                    <li className={"menuLi"}>
-                        <a className={"menuA"} href="/">Inicio</a>
-                    </li>
-                    <li className={"menuLi"}>
-                        <a className={"menuA"} href="/item/:id ">Variedad de Té</a>
-                    </li>
-                    <li className={"menuLi"}>
-                        <a className={"menuA"} href="/categoria/hierbas">Infusiones Hierbas</a>
-                    </li>
-                    <li className={"menuLi"}>
-                        <a className={"menuA"} href="/categhoria/infusiones">Infusiones Te</a>
-                    </li>
-                </ul> */}
-                
-            {/* </nav> */}
+
             <CartWidget/>
         </div>
     )

@@ -7,10 +7,6 @@ const ItemDetail = ({producto}) => {
     const [count, setCount] = useState(0)
     
     const {agregarAlCarrito} = useCartContext()
-    
-    
-    // console.log(cartList);
-    // console.log(mostrarListado);
 
     const onAdd =(cant)=>{
         setCount(cant)
@@ -24,8 +20,7 @@ const ItemDetail = ({producto}) => {
           <div className="card" >
             <div className="card-header">
                 <h3>{producto.title}</h3>
-            </div><div className="card-body">
-                {/* <img className="te-imag" src={require(`../asset/img/${producto.pictureUrl}.jpg`).default} alt='' /> */}
+            </div><div className="card-body">                
                 <img className="te-imag" src={producto.pictureUrl} alt='' />
                 <p>$ {producto.price}</p>
             </div>            
