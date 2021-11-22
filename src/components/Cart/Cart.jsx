@@ -5,15 +5,12 @@ import Table from 'react-bootstrap/Table'
 import {Link} from "react-router-dom";
 
 const Cart = () => {
-
     const {cartList, clearCarrito, precioTotal, removeItem, itemsInCart} = useCartContext()
-    console.log(precioTotal)
-
     
     return itemsInCart () ? (
         <div className="cartNoItems">
             <h5>No hay compras en el carrito..</h5>{" "}
-            <Link to="/">
+            <Link to="/categoria/todos">
             <button className="btnBack">Volver al home</button>
             </Link>
         </div>
@@ -32,13 +29,8 @@ const Cart = () => {
             </tr>
         </thead>
         <tbody className="tbody">
-        
-
             {cartList.map(prod=>
                 <tr>
-                    
-                    {/* {(`../../asset/img/{prod.picture}.jpg`).default} */}
-                    {/* <td><img width="50" src={require(`../../asset/img/${prod.picture}.jpg`).default} alt=""/></td> */}
                     <td><img width="50" src={prod.picture} alt=""/></td>
                     <td>{prod.title}</td>
                     <td>{prod.amount}</td>
@@ -48,7 +40,6 @@ const Cart = () => {
                 </tr>
             )}
         </tbody>
-        {console.table(cartList)}
         <tfoot className="tfoot">
             <tr>
                 <td></td>

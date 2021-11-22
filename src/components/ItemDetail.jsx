@@ -6,14 +6,13 @@ import {useCartContext} from './CartContext'
 const ItemDetail = ({producto}) => {
     const [count, setCount] = useState(0)
     
-    const {cartList, mostrarListado, agregarAlCarrito} = useCartContext()
+    const {agregarAlCarrito} = useCartContext()
     
     
-    console.log(cartList);
-    console.log(mostrarListado);
+    // console.log(cartList);
+    // console.log(mostrarListado);
 
     const onAdd =(cant)=>{
-        console.log(cant)
         setCount(cant)
         agregarAlCarrito({producto, cantidad: cant})
         

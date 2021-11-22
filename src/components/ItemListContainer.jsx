@@ -3,75 +3,58 @@ import {useState, useEffect} from 'react'
 import { useParams } from 'react-router-dom'
 import ItemList from '../components/ItemList'
 import { getFirestore } from '../../src/services/firebase/firebase'
-// import { apiFetch } from '../services/apiFetch'
 import "./item.css"
 
 const ItemListContainer = () => {
     const [product, setProduct] = useState([])
     const [loading, setLoading] = useState(true)
 
-    const { id } = useParams()
-    console.log(id)
+    const {id} = useParams()
 
     useEffect(() => {
-        if(id){
-            console.log(["pasando"],id)
-            const db = getFirestore()
-            const dbQuery= db.collection('items').get()
-         
-            dbQuery
-            .then(resp => ( resp.docs.map( prod => ( { id: prod.id, ...prod.data() } )) ))
-            setProduct(product.filter(prod => prod.categoria == id))
-            console.log(["dentroID"],product)
-            // product.filter(prod => prod.id == id)
-            // console.log(["despuesID"],product)
+        const db = getFirestore()
+        switch(id) {
+            case 'todos':
+                const dbQueryT= db.collection('items').orderBy('title', 'asc').get()
+                dbQueryT
+                .then(resp => setProduct( resp.docs.map( prod => ( { id: prod.id, ...prod.data() } )) ))
+            .catch(err => console.log(err))
+            .finally(()=> setLoading(false))
+            break;
+            case 'hierbas':
+                const dbQueryH= db.collection('items').where('category', '==', 'hierbas')                 
+                .get()
+                dbQueryH
+                .then(resp => setProduct( resp.docs.map( prod => ( { id: prod.id, ...prod.data() } )) ))
+                .catch(err => console.log(err))
+                .finally(()=> setLoading(false))
+            break;
+            case 'infusiones':
+                const dbQueryI= db.collection('items').where('category', '==', 'infusiones').get()
+                dbQueryI
+                .then(resp => setProduct( resp.docs.map( prod => ( { id: prod.id, ...prod.data() } )) ))
+                .catch(err => console.log(err))
+                .finally(()=> setLoading(false))
 
-        }else{
-            const db = getFirestore()
-            const dbQuery= db.collection('items').orderBy('title', 'asc').get()     
-            dbQuery
-            .then(resp => setProduct( resp.docs.map( prod => ( { id: prod.id, ...prod.data() } )) ))
+            break;
+            case 'accesorios':
+                const dbQueryA= db.collection('items').where('category', '==', 'accesorios').get()
+                dbQueryA
+                .then(resp => setProduct( resp.docs.map( prod => ( { id: prod.id, ...prod.data() } )) ))
+                .catch(err => console.log(err))
+                .finally(()=> setLoading(false))
+
+            break;
+            default:
         }
-
-    //     if(id){
-    //         const dbQuery= db.collection('items').get()
-    //         dbQuery
-    //         .then(resp => setProduct( resp.docs.filter( prod => prod.categoria == id)))
-    //         //console.log(product)
-    //     }else{
-    //     dbQuery
-    //     .then(resp => setProduct( resp.docs.map( prod => ( { id: prod.id, ...prod.data() } )) ))
-    //     console.log(product)    
-    // }
-        
-        // //console.log('[ID]: ', id);
-        // if (id) {
-        //     apiFetch
-        //     .then( res => {        
-        //         console.log('llamada a api') // alguna accion con la respuesta  
-        //         setProduct(res.filter(prod => prod.categoria === id ))
-        //         console.log(setProduct)
-        //         console.log(product)
-        //     })    
-        //     .catch(err => console.log(err))
-        //     .finally(()=> setLoading(false))              
-        // }else{
-        //     apiFetch
-        //     .then( res => {        
-        //         console.log('llamada a api') // alguna accion con la respuesta  
-        //         setProduct(res)
-        //     })    
-        //     .catch(err => console.log(err))
-        //     .finally(()=> setLoading(false))  
-        // }
-    },[id]) 
-      
-    //console.log(id);
-
+    },[id])
+ 
     return (
         <> 
             <div className='border border-2 border-primary'>
+            { loading ? <h1>Cargando...</h1> : 
                 <ItemList product={product} />  
+            }
             </div>           
         </>
     )

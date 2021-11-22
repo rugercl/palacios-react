@@ -13,8 +13,10 @@ function NavBar(){
             </span>
             
             <Link className={"menu"} to='/'>Inicio</Link>
+            <Link className={"menu"} to='/categoria/todos'>Todos Los Productos</Link>
             <Link className={"menu"} to='/categoria/hierbas'>Infusiones Hierbas</Link>       
-            <Link className={"menu"} to='/categoria/infusiones'>Infusiones Té</Link>       
+            <Link className={"menu"} to='/categoria/infusiones'>Infusiones Té</Link>
+            <Link className={"menu"} to='/categoria/accesorios'>Accesorios para Té</Link>        
             {/* <Link className={"menu"} to='/cart'>Carrito</Link>  */}
             {/* <nav className={"menu"}> */}
             

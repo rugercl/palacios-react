@@ -46,6 +46,11 @@
   margin: 10px;
 }
 
+.card-body img:hover {
+  transform: scale(1.1);
+  transition: all 250ms ease-out;
+}
+
 .btn {
   text-transform: uppercase;
   margin: 5px;

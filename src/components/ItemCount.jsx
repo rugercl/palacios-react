@@ -28,7 +28,7 @@ const ItemCount = ({stock, initial, onAdd}) => {
                 <Link to='/cart'>
                     <button className="btn btn-outline-primary btn-block">Terminar Compra</button>
                 </Link>
-                <Link to='/'>
+                <Link to='/categoria/todos'>
                     <button className="btn btn-outline-secondary btn-block">Continuar Comprando</button>
                 </Link>
             </>

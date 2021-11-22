@@ -16,6 +16,8 @@ const ItemDetailContainer = () => {
         if(id){
             db.collection('items').doc(id).get()
             .then(resp => setProd({id: resp.id, ...resp.data()})) 
+            .catch(err => console.log(err))
+            .finally(()=> setLoading(false))
 
         }
 
@@ -30,11 +32,11 @@ const ItemDetailContainer = () => {
 
     return (
         <div className="container">
-            <ItemDetail producto={prod}/> 
+            {/* <ItemDetail producto={prod}/>  */}
 
-                    {/* { loading ? <h1>Cargando...</h1> : 
+                    { loading ? <h1>Cargando...</h1> : 
                                 <ItemDetail producto={prod}/>                    
-                    } */}
+                    }
 
         </div>
     )

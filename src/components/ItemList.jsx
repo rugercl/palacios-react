@@ -4,7 +4,6 @@ import Item from '../components/Item'
 import "./item.css"
 
 export default function ItemList({product}) {
-    console.log(["itelist"],product)
     
     return (
         <div className="container">

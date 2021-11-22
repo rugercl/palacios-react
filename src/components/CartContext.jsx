@@ -1,8 +1,5 @@
 import {createContext, useState, useContext} from 'react'
-
-
 const CartContext = createContext()
-
 export const useCartContext = ()=> useContext(CartContext) 
 
 
@@ -12,8 +9,7 @@ const CartContextProvider = ({children}) => {
     
 
     //Funcion que agrega un producto al carrito
-    function agregarAlCarrito(items) { // [...cartList,items]    
-        console.log(items.cantidad)    
+    function agregarAlCarrito(items) {  
         let datos = 
         {
             id: items.producto.id,
@@ -34,12 +30,10 @@ const CartContextProvider = ({children}) => {
             return product
         }else{
             setCartList([...cartList,datos])
-            console.log(cartList)
         }
     }
     
     const precioTotal = () => {
-        console.log(cartList)
         return cartList.reduce((acum, prod) => acum + (prod.amount * prod.price), 0)
         
     }
@@ -59,42 +53,15 @@ const CartContextProvider = ({children}) => {
     const countItems = () => {
         setShow(true)
         return cartList.reduce((acum, prod) => acum + (prod.amount), 0) 
-               
     }  
-
-    // console.log(["amount"],cartList.amount)
     const itemsInCart = () => cartList.length < 1;
-
-    // funcion que agrega cierta cantidad de productos al carrito
-    function addItem (item, cantidad) {
-        agregarAlCarrito({
-            producto: item,
-            amount: cantidad
-        })
-    }
-
-    //funcion que retorna verdadero o falso si el id se encuentra en el carrito
-    function isInCart(id){
-        if(cartList.some(product=> product.id===id)){
-            return true
-        }else{
-            return false
-        }
-    }
-    
-    const mostrarListado =()=>{
-        console.log(cartList)
-    }
 
     return (
         <CartContext.Provider value={{
             cartList,
-            mostrarListado,
             agregarAlCarrito,
-            addItem,
             removeItem,
             clearCarrito,
-            isInCart, 
             countItems,
             precioTotal,
             itemsInCart,
