@@ -5,15 +5,28 @@ const Formulario = ({ cart, total }) => {
     console.log(cart)
     console.log(total)
 
+    const handleSubmit = (event) => {
+        event.preventDefault();
+    
+        const userData = {
+          name: event.target.nombre.value + " " + event.target.apellido.value,
+          phone: event.target.telefono.value,
+          email: event.target.email.value,
+        };
+        console.log(userData)
+    
+
+    }
+
     return (
         <div className="col-md-6">
             <div>
                 <h2>Terminar tu compra</h2>
-                <form>
-                <input placeholder="Nombre" type="text" id="nombre" required/>
-                <input placeholder="Apellido" type="text" id="apellido" required/>
-                <input placeholder="Teléfono" type="tel" id="telefono" required/>
-                <input placeholder="Email" type="email" id="email" required/>
+                <form onSubmit={handleSubmit}>
+                    <input placeholder="Nombre" type="text" id="nombre" required/>
+                    <input placeholder="Apellido" type="text" id="apellido" required/>
+                    <input placeholder="Teléfono" type="number" id="telefono" required/>
+                    <input placeholder="Email" type="email" id="email" required/>
                 <button type="submit">Comprar</button>
                 </form>
             </div>
