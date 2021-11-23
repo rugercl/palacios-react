@@ -1,50 +1,31 @@
-import { Container } from "react-bootstrap"
-import Carousel from 'react-bootstrap/Carousel'
+import "react-responsive-carousel/lib/styles/carousel.min.css"; 
+import { Carousel } from 'react-responsive-carousel';
+import "./item.css";
 
 const HomeContainer = ({greeting}) => {
-    // src={require(`../asset/img/${prod.pictureUrl}.jpg`).default}
-    // "../../src/asset/img/portada1.jpg/800x400?text=First slide&bg=373940"
     return (
-        // <Container>
-            <Carousel>
+        <div className="texth3">
             <h1 className="text-center mt-5 pt-4">{greeting}</h1>
-                <Carousel.Item>
-                    <img
-                    className="d-block w-100"
-                    src={require(`../asset/img/portada1.jpg`).default} width="800" height="400"
-                    alt="First slide"
-                    />
-                    <Carousel.Caption>
-                    <h3>First slide label</h3>
-                    <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-                    </Carousel.Caption>
-                </Carousel.Item>
-                <Carousel.Item>
-                    <img
-                    className="d-block w-100"
-                    src={require(`../asset/img/portada2.jpg`).default} width="800" height="400"
-                    alt="Second slide"
-                    />
-
-                    <Carousel.Caption>
-                    <h3>Second slide label</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                    </Carousel.Caption>
-                </Carousel.Item>
-                <Carousel.Item>
-                    <img
-                    className="d-block w-100"
-                    src={require(`../asset/img/portada3.jpg`).default} width="800" height="400"
-                    alt="Third slide"
-                    />
-
-                <Carousel.Caption>
-                <h3>Third slide label</h3>
-                <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
-                </Carousel.Caption>
-            </Carousel.Item>
+        
+        <div className="homecontainer">
+            
+            
+            <Carousel showThumbs={false} width={960}>
+                    <div className="carousel">
+                        <img src={require(`../asset/img/portada1.jpg`).default} width="800" height="400" alt="" />
+                        <p className="legend">El té es una de las bebidas más antiguas del mundo.</p>
+                    </div>
+                    <div>
+                        <img src={require(`../asset/img/portada2.jpg`).default} width="800" height="400" alt="" />
+                        <p className="legend">Según cuenta la leyenda china, el té surgió de la mano del emperador Shen-Nung.</p>
+                    </div>
+                    <div>
+                    <img src={require(`../asset/img/portada3.jpg`).default} width="800" height="400" alt="" />
+                    <p className="legend">En todo el mundo el té es la bebida más consumida, por encima del café, de la cerveza o la coca-cola.</p>
+                    </div>
             </Carousel>
-        // </Container>
+        </div>
+        </div>
 
     )
 }

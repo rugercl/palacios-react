@@ -82,3 +82,22 @@
 .stock {
   color: #007bff;
 }
+
+.homecontainer {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  text-align: center;
+}
+
+.texth3 h1 {
+  font-size: 2rem;
+  color: #666;
+}
+
+.carousel p {
+  background-color: transparent !important;
+  font-size: 1.5rem;
+  color: #666;
+  margin: 10px;
+}

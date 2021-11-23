@@ -3,10 +3,12 @@ import "./Cart.css";
 import {useCartContext} from '../CartContext'
 import Table from 'react-bootstrap/Table'
 import {Link} from "react-router-dom";
+import Formulario from '../Formulario';
 
 const Cart = () => {
     const {cartList, clearCarrito, precioTotal, removeItem, itemsInCart} = useCartContext()
-    
+
+
     return itemsInCart () ? (
         <div className="cartNoItems">
             <h5>No hay compras en el carrito..</h5>{" "}
@@ -51,6 +53,7 @@ const Cart = () => {
             </tr>
         </tfoot>
         </Table>
+        <Formulario cart={cartList} total={precioTotal()}/>
         
     </div>
     

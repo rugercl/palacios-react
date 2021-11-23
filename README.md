@@ -47,6 +47,10 @@ En su sitio WEB promociona una variada cantidad de productos y soluciones para
 complementar su el uso de su base.
 Ma informacion en el siguiente link: [https://firebase.google.com/]
 
+### `npm i -g react-responsive-carousel`
+
+Carrousel interactivo para la visualización de imágenes, sacado del sitio de [https://www.npmjs.com/package/react-responsive-carousel], en este sitio se encuentra un ejemplo [http://react-responsive-carousel.js.org/]
+
 ### `react-scripts start`
 
 react-scripts es un conjunto de scripts del create-react-app starter pack. Este le ayuda a iniciar proyectos sin configurar, por lo que no tiene que configurar su proyecto por sí mismo, configura el entorno de desarrollo e inicia un servidor, así como la recarga de módulos en caliente(similar a nodemon)

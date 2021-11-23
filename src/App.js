@@ -6,6 +6,7 @@ import ItemDetailContainer from './components/ItemDetailContainer';
 import  Cart  from './components/Cart/Cart';
 import CartContextProvider from './components/CartContext';
 import HomeContainer from './components/HomeContainer';
+import {Footer} from './components/Footer';
 
 
 const App = () => {
@@ -24,6 +25,7 @@ const App = () => {
               <Route exact path='/item/:id' component={ItemDetailContainer} /> 
               <Route exact path='/cart' component={Cart} />             
             </Switch>
+            <Footer/>
           </BrowserRouter>
         </CartContextProvider>
     </div>

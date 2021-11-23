@@ -2,6 +2,11 @@
   display: flex;
   background-color: gray;
 }
+
+.App-logo {
+  margin-left: 5px;
+}
+
 .menu {
   width: 60%;
   float: right;
