@@ -12,7 +12,7 @@ const Cart = () => {
     return itemsInCart () ? (
         <div className="cartNoItems">
             <h5>No hay compras en el carrito..</h5>{" "}
-            <Link to="/categoria/todos">
+            <Link to="/">
             <button className="btnBack">Volver al home</button>
             </Link>
         </div>

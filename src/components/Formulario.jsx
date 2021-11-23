@@ -1,15 +1,15 @@
 import {useCartContext} from '../components/CartContext'
 import { getFirestore } from '../../src/services/firebase/firebase'
 import firebase from "firebase";
+import Swal from 'sweetalert2/src/sweetalert2.js'
 
 const Formulario = ({ cart, total }) => {
     const {clearCarrito, countItems, precioTotal} = useCartContext()
-    console.log(cart)
-    console.log(total)
 
     const handleSubmit = (event) => {
         event.preventDefault();
         let orderId;
+        
         const db = getFirestore()
     
         //Captura de datos del cliente
@@ -22,49 +22,47 @@ const Formulario = ({ cart, total }) => {
         //Captura de datos del pedido
         const newOrder = {
             buyer: userData,
-            items: cart,
+            items: cart.map(cartItem => {
+              const id = cartItem.id;
+              const nombre = cartItem.title;
+              const precio = cartItem.price * cartItem.amount;
+              
+              return {id, nombre, precio}   
+          }),
             date: new Date().toString(),
             total: total,
           };
-        console.log(newOrder)
 
+        //Generar id del pedido
         const orders = db.collection("orders");
         orders
           .add(newOrder)
           .then((res) => {
             orderId = res.id;
           })
-          .catch((error) => {
-            console.log("ERROR: " + error);
+          .catch((error) => {console.log("ERROR: " + error);
           });
 
-          const itemsToCheck  =  db.collection("items").where(
-            firebase.firestore.FieldPath.documentId(), "in", cart.map(item => item.id)
-          );
-          itemsToCheck.get().then((query) => {
-            const batch = db.batch();
-            const outStockItems = [];  
-            query.docs.forEach((doc, index) => {
-              if (doc.data().stock >= newOrder.items[index].cantidad) {
-                batch.update(doc.ref, {
-                  stock: doc.data().stock - newOrder.items[index].cantidad,
-                });
-              } else {
-                outStockItems.push({ ...doc.data().items, id: doc.id });
-              }
-            });
-      
-      
-          if (outStockItems.length === 0) {
-            batch.commit().then(() => {
-                alert(`Tu compra fue realizada, tu orden es ${orderId}`)
-                clearCarrito()
-              });
-            } else {
-              alert("ERROR: Hay items que ya no tienen stock suficiente.");
-            }
-          });
+          const itemsToUpdate = db.collection('items').where(
+            firebase.firestore.FieldPath.documentId(), 'in', cart.map(i=> i.id)
+        )
     
+        const batch = db.batch();
+
+        //actualizar cantidad de items y envia mensaje al cliente
+        itemsToUpdate.get()
+        .then( collection=>{
+            collection.docs.forEach(docSnapshot => {
+                batch.update(docSnapshot.ref, {
+                    stock: docSnapshot.data().stock - cart.find(item => item.id === docSnapshot.id).amount
+                })
+            })
+            batch.commit().then((res) => {
+                Swal.fire(`Tu compra fue realizada, tu orden es ${orderId}`)
+                clearCarrito()
+            });
+        })
+
 
     }
 
