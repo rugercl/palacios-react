@@ -78,9 +78,22 @@
   background-color: #007bff;
   color: #fff;
 }
+.text-descrip {
+  text-overflow: ellipsis !important;
+  overflow: hidden;
+  white-space: nowrap;
+  width: 200px;
+  display: block;
+}
 
 .stock {
-  color: #007bff;
+  color: blanchedalmond;
+  background-color: #007bff;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  font-weight: 600;
 }
 
 .homecontainer {
@@ -100,4 +113,10 @@
   font-size: 1.5rem;
   color: #666;
   margin: 10px;
+}
+.legend {
+  font-size: 1.5em !important;
+  font-weight: 600 !important;
+  color: blanchedalmond !important;
+  text-shadow: 1px 1px 1px #000 !important;
 }
