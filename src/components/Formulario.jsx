@@ -1,6 +1,7 @@
 import {useCartContext} from '../components/CartContext'
 import { getFirestore } from '../../src/services/firebase/firebase'
-import firebase from "firebase";
+import firebase from "firebase/app";
+import "firebase/firestore";
 import Swal from 'sweetalert2/src/sweetalert2.js'
 
 const Formulario = ({ cart, total }) => {

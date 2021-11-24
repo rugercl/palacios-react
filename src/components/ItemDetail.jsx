@@ -5,6 +5,7 @@ import {useCartContext} from './CartContext'
 
 const ItemDetail = ({producto}) => {
     const [count, setCount] = useState(0)
+    console.log(count)
     
     const {agregarAlCarrito} = useCartContext()
 

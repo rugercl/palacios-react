@@ -20,6 +20,7 @@ const CartContextProvider = ({children}) => {
         }
         const existe = cartList.some( produc=> produc.id===datos.id);
         if(existe){
+            // eslint-disable-next-line array-callback-return
             const product = cartList.map(product=>{
                 if(product.id===datos.id){
                     product.amount ++;
