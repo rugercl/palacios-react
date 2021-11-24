@@ -26,10 +26,28 @@
   border-radius: 5px;
 }
 
+.card-detail {
+  width: 320px;
+  margin: 10px;
+  border-radius: 5px;
+}
+
 .te-imag {
   width: 220px;
   border-radius: 50%;
   height: 220px;
+}
+
+.card-header2 {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-content: center;
+  flex: 1;
+  background-color: #f1f1f1;
+  border-radius: 5px;
 }
 
 .card-header h3 {
