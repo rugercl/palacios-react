@@ -138,3 +138,9 @@
   color: blanchedalmond !important;
   text-shadow: 1px 1px 1px #000 !important;
 }
+
+.cartNoItems p {
+  font-size: 1.5rem;
+  color: rgb(70, 73, 218);
+  margin: 10px;
+}

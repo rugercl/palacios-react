@@ -5,9 +5,9 @@ import {useCartContext} from './CartContext'
 import {Link} from 'react-router-dom'
 
 const ItemDetail = ({producto}) => {
+    // eslint-disable-next-line no-unused-vars
     const [count, setCount] = useState(0)
-    console.log(count)
-    
+        
     const {agregarAlCarrito} = useCartContext()
 
     const onAdd =(cant)=>{

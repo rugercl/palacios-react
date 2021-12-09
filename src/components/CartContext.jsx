@@ -54,6 +54,7 @@ const CartContextProvider = ({children}) => {
     const countItems = () => {
         setShow(true)
         return cartList.reduce((acum, prod) => acum + (prod.amount), 0) 
+        
     }  
     const itemsInCart = () => cartList.length < 1;
 
