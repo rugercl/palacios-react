@@ -38,7 +38,6 @@ const ItemCount = ({stock, initial, onAdd}) => {
           <><button className="btn btn-primary" onClick={handlerAdd}>+</button><label>{count}</label><button className="btn btn-primary" onClick={handlerRm}>-</button><br /><button className="btn btn-outline-primary btn-block" onClick={handlerOnAdd}>Agregar</button></>
              
         }
-           
     
     </div> 
     );

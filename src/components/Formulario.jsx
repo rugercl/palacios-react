@@ -63,8 +63,6 @@ const Formulario = ({ cart, total }) => {
                 clearCarrito()
             });
         })
-
-
     }
 
     return (
